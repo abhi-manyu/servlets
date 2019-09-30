@@ -6,7 +6,8 @@ import javax.mail.internet.AddressException;
 public class MailUtil {
 
 	public static void main(String[] args) throws AddressException, MessagingException {
-		MailClass.sendMail("ghoshsaptarshiaot@gmail.com");
+		MailClass mc1 = new MailClass();
+		mc1.sendMail("abhimanyumoharana144@gmail.com");
 
 	}
  

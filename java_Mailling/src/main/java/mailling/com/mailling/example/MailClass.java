@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 
 public class MailClass
 {
-    public static void sendMail(String rcvr) throws AddressException, MessagingException
+    public void sendMail(String rcvr) throws AddressException, MessagingException
     {
     	System.out.println("preparing ur mail");
     	
@@ -27,7 +27,7 @@ public class MailClass
         
         
         final String myAccountEmail="abhim.moharana@gmail.com";
-        final String password = "abhi@manyu@12345";
+        //final String password = "abhi@manyu@12345";
         
         Session s = Session.getInstance(prop, new Authenticator() {
         	@Override
@@ -48,7 +48,9 @@ public class MailClass
 		Message msg = new MimeMessage(s);
 		msg.setRecipient(Message.RecipientType.TO, new InternetAddress(rcvr));
 		msg.setSubject("this is a testing message");
-		msg.setText("hello saptarshi , how are you ? this is the second mail i m sending through java codes");
+		msg.setText("hello there , how are you ? thank you for registering in messenger application \n\n"
+				+ "thanks and regards \n"
+				+ "team messenger :)");
 		
 		msg.setFrom(new InternetAddress(myAccountEmail));
 		return msg;
